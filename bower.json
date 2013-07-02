@@ -1,0 +1,9 @@
+{
+	"name": "devtools-detect",
+	"version": "0.1.0",
+	"main": "devtools-detect.js",
+	"ignore": [
+		".*",
+		"index.html"
+	]
+}
