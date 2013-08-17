@@ -5,7 +5,7 @@
 	/*global CustomEvent */
 	'use strict';
 	var devtools = window.devtools = { open: false };
-	var threshold = 150;
+	var threshold = 160;
 	var emitEvent = function (state) {
 		window.dispatchEvent(new CustomEvent('devtoolschange', {
 			detail: {
