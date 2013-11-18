@@ -15,7 +15,7 @@
 	};
 
 	setInterval(function () {
-		if (window.outerWidth - window.innerWidth > threshold ||
+		if ((window.Firebug !== undefined && window.Firebug.chrome !== undefined && window.Firebug.chrome.isInitialized) || window.outerWidth - window.innerWidth > threshold ||
 			window.outerHeight - window.innerHeight > threshold) {
 			if (!devtools.open) {
 				emitEvent(true);
