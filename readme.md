@@ -31,7 +31,13 @@ Install with [Bower](https://github.com/bower/bower) `bower install devtools-det
 
 ## Support
 
-Works with Chrome DevTools, Safari DevTools, Firefox DevTools, Firebug.
+Works with:
+
+- Chrome DevTools
+- Safari DevTools
+- Firefox DevTools
+- Firebug
+- Firebug Lite
 
 
 ## Caveats
@@ -41,4 +47,4 @@ Doesn't work if DevTools is undocked and will show false positive if you toggle 
 
 ## License
 
-MIT License • © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)
