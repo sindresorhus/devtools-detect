@@ -1,6 +1,6 @@
 {
   "name": "devtools-detect",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Detect if DevTools is open - browser",
   "license": "MIT",
   "repository": "sindresorhus/devtools-detect",
