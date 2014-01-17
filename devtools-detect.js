@@ -6,9 +6,8 @@
 	MIT License
 */
 (function () {
-	/*global CustomEvent */
 	'use strict';
-	var devtools = window.devtools = {open: false};
+	var devtools = {open: false};
 	var threshold = 160;
 	var emitEvent = function (state) {
 		window.dispatchEvent(new CustomEvent('devtoolschange', {
@@ -32,4 +31,10 @@
 			devtools.open = false;
 		}
 	}, 500);
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = devtools;
+	} else {
+		window.devtools = devtools;
+	}
 })();

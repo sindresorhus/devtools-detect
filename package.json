@@ -1,0 +1,27 @@
+{
+  "name": "devtools-detect",
+  "version": "0.1.0",
+  "description": "Detect if DevTools is open - browser",
+  "license": "MIT",
+  "repository": "sindresorhus/devtools-detect",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "devtools-detect.js"
+  ],
+  "keywords": [
+    "browser",
+    "detect",
+    "identify",
+    "check",
+    "dev",
+    "devtools",
+    "developer"
+  ]
+}

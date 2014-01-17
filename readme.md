@@ -10,7 +10,25 @@ Useful for when you want something special to happen when DevTools is open. Like
 
 ## Install
 
-Install with [Bower](https://github.com/bower/bower) `bower install devtools-detect` or [download](https://github.com/sindresorhus/devtools-detect/raw/gh-pages/devtools-detect.js) manually.
+Download [manually](https://github.com/sindresorhus/devtools-detect/releases) or with a package-manager.
+
+#### [npm](https://npmjs.org/package/devtools-detect)
+
+```
+npm install --save devtools-detect
+```
+
+#### [Bower](http://bower.io)
+
+```
+bower install --save devtools-detect
+```
+
+#### [Component](https://github.com/component/component)
+
+```
+component install sindresorhus/devtools-detect
+```
 
 
 ## Example
