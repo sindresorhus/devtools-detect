@@ -16,10 +16,13 @@
 			}
 		}));
 	};
+	var getPixelRatio = function() {
+		return window.devicePixelRatio || 1;
+	};
 
 	setInterval(function () {
-		if ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || window.outerWidth - window.innerWidth > threshold ||
-			window.outerHeight - window.innerHeight > threshold) {
+		if ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || window.outerWidth - window.innerWidth*getPixelRatio() > threshold ||
+			window.outerHeight - window.innerHeight*getPixelRatio() > threshold) {
 			if (!devtools.open) {
 				emitEvent(true);
 			}
