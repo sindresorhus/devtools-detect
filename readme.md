@@ -12,26 +12,20 @@ Useful for when you want something special to happen when DevTools is open. Like
 
 Download [manually](https://github.com/sindresorhus/devtools-detect/releases) or with a package-manager.
 
-#### [npm](https://npmjs.org/package/devtools-detect)
-
-```
-npm install --save devtools-detect
+```bash
+$ npm install --save devtools-detect
 ```
 
-#### [Bower](http://bower.io)
-
-```
-bower install --save devtools-detect
+```bash
+$ bower install --save devtools-detect
 ```
 
-#### [Component](https://github.com/component/component)
-
-```
-component install sindresorhus/devtools-detect
+```bash
+$ component install sindresorhus/devtools-detect
 ```
 
 
-## Example
+## Usage
 
 ```html
 <script src="devtools-detect.js"></script>
@@ -65,4 +59,4 @@ Doesn't work if DevTools is undocked and will show false positive if you toggle 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
