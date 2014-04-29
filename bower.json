@@ -1,14 +1,15 @@
 {
 	"name": "devtools-detect",
-	"version": "0.1.1",
 	"description": "Detect if DevTools is open",
 	"license": "MIT",
 	"main": "devtools-detect.js",
-	"authors": [{
-	  "name": "Sindre Sorhus",
-	  "email": "sindresorhus@gmail.com",
-	  "url": "http://sindresorhus.com"
-	}],
+	"authors": [
+		{
+			"name": "Sindre Sorhus",
+			"email": "sindresorhus@gmail.com",
+			"url": "http://sindresorhus.com"
+		}
+	],
 	"keywords": [
 		"detect",
 		"identify",
