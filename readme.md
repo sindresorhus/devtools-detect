@@ -5,23 +5,19 @@
 Useful for when you want something special to happen when DevTools is open. Like pausing canvas, adding style debug info, etc.
 
 
-### [Demo](http://sindresorhus.com/devtools-detect)
+## [Demo](http://sindresorhus.com/devtools-detect)
 
 
 ## Install
 
-Download [manually](https://github.com/sindresorhus/devtools-detect/releases) or with a package-manager.
-
-```bash
+```sh
 $ npm install --save devtools-detect
 ```
 
-```bash
-$ bower install --save devtools-detect
-```
+*(with [Browserify](http://browserify.org))*
 
-```bash
-$ component install sindresorhus/devtools-detect
+```sh
+$ bower install --save devtools-detect
 ```
 
 
@@ -43,8 +39,6 @@ $ component install sindresorhus/devtools-detect
 
 ## Support
 
-Works with:
-
 - Chrome DevTools
 - Safari DevTools
 - Firefox DevTools
@@ -59,4 +53,4 @@ Doesn't work if DevTools is undocked and will show false positive if you toggle 
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)
