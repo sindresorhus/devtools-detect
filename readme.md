@@ -10,21 +10,15 @@ Useful for when you want something special to happen when DevTools is open. Like
 
 ## Install
 
-```sh
-$ npm install --save devtools-detect
 ```
-
-*(with [Browserify](http://browserify.org))*
-
-```sh
-$ bower install --save devtools-detect
+$ npm install --save devtools-detect
 ```
 
 
 ## Usage
 
 ```html
-<script src="devtools-detect.js"></script>
+<script src="node_modules/devtools-detect/index.js"></script>
 <script>
 	// check if it's open
 	console.log('is DevTools open?', window.devtools.open);
