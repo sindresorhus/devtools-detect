@@ -13,7 +13,7 @@
     "node": ">=0.10.0"
   },
   "files": [
-    "devtools-detect.js"
+    "index.js"
   ],
   "keywords": [
     "browser",

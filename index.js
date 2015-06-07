@@ -28,6 +28,7 @@
 			if (devtools.open) {
 				emitEvent(false);
 			}
+
 			devtools.open = false;
 		}
 	}, 500);
