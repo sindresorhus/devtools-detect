@@ -30,10 +30,17 @@
 			}
 
 			#devtools-state {
-				margin: 50px 0 70px 0;
+				margin: 50px 0 36px 0;
 				font-size: 100px;
 				font-weight: 200;
 			}
+
+      #devtools-orientation {
+        margin-bottom: 40px;
+        font-size: 28px;
+        height: 28px;
+        font-weight: 100;
+      }
 
 			.instruction {
 				font-weight: 200;
@@ -57,6 +64,7 @@
 			<section class="main span12 text-center">
 				<h1>is DevTools open?</h1>
 				<h2 id="devtools-state"></h2>
+        <h3 id="devtools-orientation"></h3>
 				<div class="instruction">Try it out by opening DevTools</div>
 			</section>
 			<footer>
@@ -68,11 +76,14 @@
 		<script src="index.js"></script>
 		<script>
 			var stateEl = document.querySelector('#devtools-state');
+      var oriEl = document.querySelector('#devtools-orientation');
 
 			stateEl.textContent = window.devtools.open ? 'yes' : 'no';
+      oriEl.textContent = (window.devtools.orientation) ? window.devtools.orientation : '';
 
 			window.addEventListener('devtoolschange', function (e) {
 				stateEl.textContent = e.detail.open ? 'yes' : 'no';
+        oriEl.textContent = (e.detail.orientation) ? e.detail.orientation : '';
 			});
 		</script>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
