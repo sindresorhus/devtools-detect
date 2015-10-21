@@ -1,6 +1,6 @@
 # devtools-detect
 
-> Detect if DevTools is open
+> Detect if DevTools is open and its orientation
 
 Useful for when you want something special to happen when DevTools is open. Like pausing canvas, adding style debug info, etc.
 
@@ -22,13 +22,13 @@ $ npm install --save devtools-detect
 <script>
 	// check if it's open
 	console.log('is DevTools open?', window.devtools.open);
-  // check it's orientation, null if not open
-  console.log('and DevTools orientation?', window.devtools.orientation);
+	// check it's orientation, null if not open
+	console.log('and DevTools orientation?', window.devtools.orientation);
 
 	// get notified when it's opened/closed or orientation changes
 	window.addEventListener('devtoolschange', function (e) {
 		console.log('is DevTools open?', e.detail.open);
-    console.log('and DevTools orientation?', window.devtools.orientation);
+		console.log('and DevTools orientation?', e.detail.orientation);
 	});
 </script>
 ```
