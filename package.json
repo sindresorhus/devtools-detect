@@ -26,5 +26,16 @@
     "orientation",
     "placement",
     "docked"
-  ]
+  ],
+  "scripts": {
+    "test": "xo"
+  },
+  "devDependencies": {
+    "xo": "*"
+  },
+  "xo": {
+    "envs": [
+      "browser"
+    ]
+  }
 }

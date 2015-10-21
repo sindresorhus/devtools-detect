@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 /*!
 	devtools-detect
 	Detect if DevTools is open
