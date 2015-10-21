@@ -7,29 +7,42 @@
 */
 (function () {
 	'use strict';
-	var devtools = {open: false};
+	var devtools = {
+    open: false,
+    orientation: null
+  };
 	var threshold = 160;
-	var emitEvent = function (state) {
+	var emitEvent = function (state, orientation) {
 		window.dispatchEvent(new CustomEvent('devtoolschange', {
 			detail: {
-				open: state
+				open: state,
+        orientation: orientation
 			}
 		}));
 	};
 
 	setInterval(function () {
-		if ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || window.outerWidth - window.innerWidth > threshold ||
-			window.outerHeight - window.innerHeight > threshold) {
-			if (!devtools.open) {
-				emitEvent(true);
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    var orientation = widthThreshold ? 'vertical' : 'horizontal';
+
+		if ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || 
+      widthThreshold || heightThreshold) {
+			if (!devtools.open || devtools.orientation != orientation) {
+				emitEvent(true, orientation);
 			}
-			devtools.open = true;
+      devtools = {
+        open: true,
+        orientation: orientation
+      };
 		} else {
 			if (devtools.open) {
-				emitEvent(false);
+				emitEvent(false, null);
 			}
-
-			devtools.open = false;
+			devtools = {
+        open: false,
+        orientation: null
+      }; 
 		}
 	}, 500);
 
