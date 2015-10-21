@@ -1,13 +1,13 @@
 {
   "name": "devtools-detect",
   "version": "2.0.0",
-  "description": "Detect if DevTools is open",
+  "description": "Detect if DevTools is open and its orientation",
   "license": "MIT",
   "repository": "sindresorhus/devtools-detect",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -22,7 +22,9 @@
     "check",
     "dev",
     "devtools",
-    "developer"
-  ],
-  "scripts": {}
+    "developer",
+    "orientation",
+    "placement",
+    "docked"
+  ]
 }
