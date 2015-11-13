@@ -33,19 +33,15 @@
 				emitEvent(true, orientation);
 			}
 
-			devtools = {
-				open: true,
-				orientation: orientation
-			};
+			devtools.open = true;
+			devtools.orientation = orientation;
 		} else {
 			if (devtools.open) {
 				emitEvent(false, null);
 			}
 
-			devtools = {
-				open: false,
-				orientation: null
-			};
+			devtools.open = false;
+			devtools.orientation = null;
 		}
 	}, 500);
 
