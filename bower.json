@@ -1,0 +1,30 @@
+{
+  "name": "devtools-detect",
+  "description": "Detect if DevTools is open and its orientation",
+  "main": "index.js",
+  "authors": [
+    "Sindre Sorhus"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "browser",
+    "detect",
+    "identify",
+    "check",
+    "dev",
+    "devtools",
+    "developer",
+    "orientation",
+    "placement",
+    "docked"
+  ],
+  "homepage": "https://github.com/sindresorhus/devtools-detect",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
