@@ -14,6 +14,10 @@ Useful for when you want something special to happen when DevTools is open. Like
 $ npm install --save devtools-detect
 ```
 
+```
+$ bower install --save devtools-detect
+```
+
 
 ## Usage
 
