@@ -5,7 +5,7 @@
 Useful for when you want something special to happen when DevTools is open. Like pausing canvas, adding style debug info, etc.
 
 
-## [Demo](http://sindresorhus.com/devtools-detect)
+## [Demo](https://sindresorhus.com/devtools-detect)
 
 
 ## Install
@@ -50,4 +50,4 @@ Doesn't work if DevTools is undocked and will show false positive if you toggle 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
