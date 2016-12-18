@@ -27,8 +27,8 @@
 		var heightThreshold = window.outerHeight - window.innerHeight > threshold;
 		var orientation = widthThreshold ? 'vertical' : 'horizontal';
 
-		if ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) ||
-			widthThreshold || heightThreshold) {
+		if (!(heightThreshold && widthThreshold) &&
+      ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
 			if (!devtools.open || devtools.orientation !== orientation) {
 				emitEvent(true, orientation);
 			}
