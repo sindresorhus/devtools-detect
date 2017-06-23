@@ -39,6 +39,7 @@ $ npm install --save devtools-detect
 - Chrome DevTools
 - Safari DevTools
 - Firefox DevTools
+- Opera DevTools
 - Firebug
 - Firebug Lite
 
