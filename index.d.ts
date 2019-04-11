@@ -10,9 +10,9 @@ declare namespace devTools {
 		readonly open: boolean;
 
 		/**
-		Orientaion of the DevTools or `null` if not open.
+		Orientation of the DevTools if it's open.
 		*/
-		readonly orientation: Orientation | null;
+		readonly orientation?: Orientation;
 	}
 
 	interface DevToolsEvent extends Event {

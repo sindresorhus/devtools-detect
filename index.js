@@ -10,7 +10,7 @@ MIT License
 
 	const devtools = {
 		open: false,
-		orientation: null
+		orientation: undefined
 	};
 
 	const threshold = 160;
@@ -41,11 +41,11 @@ MIT License
 			devtools.orientation = orientation;
 		} else {
 			if (devtools.open) {
-				emitEvent(false, null);
+				emitEvent(false, undefined);
 			}
 
 			devtools.open = false;
-			devtools.orientation = null;
+			devtools.orientation = undefined;
 		}
 	}, 500);
 

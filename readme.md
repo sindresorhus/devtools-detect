@@ -23,7 +23,7 @@ $ npm install devtools-detect
 	// Check if it's open
 	console.log('Is DevTools open:', window.devtools.open);
 
-	// Check it's orientation, null if not open
+	// Check it's orientation, `undefined` if not open
 	console.log('DevTools orientation:', window.devtools.orientation);
 
 	// Get notified when it's opened/closed or orientation changes
@@ -41,8 +41,6 @@ $ npm install devtools-detect
 - Safari DevTools
 - Firefox DevTools
 - Opera DevTools
-- Firebug
-- Firebug Lite
 
 
 ## Caveats
