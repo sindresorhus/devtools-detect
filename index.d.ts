@@ -7,7 +7,7 @@ declare namespace devTools {
 		/**
 		Whether DevTools is open.
 		*/
-		readonly open: boolean;
+		readonly isOpen: boolean;
 
 		/**
 		Orientation of the DevTools if it's open.

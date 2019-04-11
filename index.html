@@ -78,11 +78,11 @@
 			const stateElement = document.querySelector('#devtools-state');
 			const orientationElement = document.querySelector('#devtools-orientation');
 
-			stateElement.textContent = window.devtools.open ? 'yes' : 'no';
+			stateElement.textContent = window.devtools.isOpen ? 'yes' : 'no';
 			orientationElement.textContent = window.devtools.orientation ? window.devtools.orientation : '';
 
 			window.addEventListener('devtoolschange', event => {
-				stateElement.textContent = event.detail.open ? 'yes' : 'no';
+				stateElement.textContent = event.detail.isOpen ? 'yes' : 'no';
 				orientationElement.textContent = event.detail.orientation ? event.detail.orientation : '';
 			});
 		</script>

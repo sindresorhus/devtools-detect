@@ -9,16 +9,16 @@ MIT License
 	'use strict';
 
 	const devtools = {
-		open: false,
+		isOpen: false,
 		orientation: undefined
 	};
 
 	const threshold = 160;
 
-	const emitEvent = (state, orientation) => {
+	const emitEvent = (isOpen, orientation) => {
 		window.dispatchEvent(new CustomEvent('devtoolschange', {
 			detail: {
-				open: state,
+				isOpen,
 				orientation
 			}
 		}));
@@ -33,18 +33,18 @@ MIT License
 			!(heightThreshold && widthThreshold) &&
 			((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
 		) {
-			if (!devtools.open || devtools.orientation !== orientation) {
+			if (!devtools.isOpen || devtools.orientation !== orientation) {
 				emitEvent(true, orientation);
 			}
 
-			devtools.open = true;
+			devtools.isOpen = true;
 			devtools.orientation = orientation;
 		} else {
-			if (devtools.open) {
+			if (devtools.isOpen) {
 				emitEvent(false, undefined);
 			}
 
-			devtools.open = false;
+			devtools.isOpen = false;
 			devtools.orientation = undefined;
 		}
 	}, 500);

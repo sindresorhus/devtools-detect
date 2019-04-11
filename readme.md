@@ -21,14 +21,14 @@ $ npm install devtools-detect
 <script src="node_modules/devtools-detect/index.js"></script>
 <script type="module">
 	// Check if it's open
-	console.log('Is DevTools open:', window.devtools.open);
+	console.log('Is DevTools open:', window.devtools.isOpen);
 
 	// Check it's orientation, `undefined` if not open
 	console.log('DevTools orientation:', window.devtools.orientation);
 
 	// Get notified when it's opened/closed or orientation changes
 	window.addEventListener('devtoolschange', event => {
-		console.log('Is DevTools open:', event.detail.open);
+		console.log('Is DevTools open:', event.detail.isOpen);
 		console.log('DevTools orientation:', event.detail.orientation);
 	});
 </script>
