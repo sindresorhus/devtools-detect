@@ -19,16 +19,17 @@ $ npm install devtools-detect
 
 ```html
 <script src="node_modules/devtools-detect/index.js"></script>
-<script>
-	// check if it's open
-	console.log('is DevTools open?', window.devtools.open);
-	// check it's orientation, null if not open
-	console.log('and DevTools orientation?', window.devtools.orientation);
+<script type="module">
+	// Check if it's open
+	console.log('Is DevTools open:', window.devtools.open);
 
-	// get notified when it's opened/closed or orientation changes
-	window.addEventListener('devtoolschange', function (e) {
-		console.log('is DevTools open?', e.detail.open);
-		console.log('and DevTools orientation?', e.detail.orientation);
+	// Check it's orientation, null if not open
+	console.log('DevTools orientation:', window.devtools.orientation);
+
+	// Get notified when it's opened/closed or orientation changes
+	window.addEventListener('devtoolschange', event => {
+		console.log('Is DevTools open:', event.detail.open);
+		console.log('DevTools orientation:', event.detail.orientation);
 	});
 </script>
 ```

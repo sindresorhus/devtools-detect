@@ -1,34 +1,38 @@
-/* eslint-disable spaced-comment */
 /*!
-	devtools-detect
-	Detect if DevTools is open
-	https://github.com/sindresorhus/devtools-detect
-	by Sindre Sorhus
-	MIT License
+devtools-detect
+Detect if DevTools is open
+https://github.com/sindresorhus/devtools-detect
+By Sindre Sorhus
+MIT License
 */
 (function () {
 	'use strict';
-	var devtools = {
+
+	const devtools = {
 		open: false,
 		orientation: null
 	};
-	var threshold = 160;
-	var emitEvent = function (state, orientation) {
+
+	const threshold = 160;
+
+	const emitEvent = (state, orientation) => {
 		window.dispatchEvent(new CustomEvent('devtoolschange', {
 			detail: {
 				open: state,
-				orientation: orientation
+				orientation
 			}
 		}));
 	};
 
-	setInterval(function () {
-		var widthThreshold = window.outerWidth - window.innerWidth > threshold;
-		var heightThreshold = window.outerHeight - window.innerHeight > threshold;
-		var orientation = widthThreshold ? 'vertical' : 'horizontal';
+	setInterval(() => {
+		const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+		const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+		const orientation = widthThreshold ? 'vertical' : 'horizontal';
 
-		if (!(heightThreshold && widthThreshold) &&
-      ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
+		if (
+			!(heightThreshold && widthThreshold) &&
+			((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+		) {
 			if (!devtools.open || devtools.orientation !== orientation) {
 				emitEvent(true, orientation);
 			}
