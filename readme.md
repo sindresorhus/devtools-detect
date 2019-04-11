@@ -11,7 +11,7 @@ Useful for when you want something special to happen when DevTools is open. Like
 ## Install
 
 ```
-$ npm install --save devtools-detect
+$ npm install devtools-detect
 ```
 
 
