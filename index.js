@@ -33,7 +33,7 @@ MIT License
 			!(heightThreshold && widthThreshold) &&
 			((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
 		) {
-			if (!devtools.isOpen || devtools.orientation !== orientation && emitEvents) {
+			if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 				emitEvent(true, orientation);
 			}
 
@@ -47,9 +47,9 @@ MIT License
 			devtools.isOpen = false;
 			devtools.orientation = undefined;
 		}
-	}
-	
-	main({emitEvents: false})
+	};
+
+	main({emitEvents: false});
 	setInterval(main, 500);
 
 	if (typeof module !== 'undefined' && module.exports) {
