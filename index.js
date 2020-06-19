@@ -24,7 +24,7 @@ MIT License
 		}));
 	};
 
-	setInterval(() => {
+	const main = ({emitEvents = true} = {}) => {
 		const widthThreshold = window.outerWidth - window.innerWidth > threshold;
 		const heightThreshold = window.outerHeight - window.innerHeight > threshold;
 		const orientation = widthThreshold ? 'vertical' : 'horizontal';
@@ -33,21 +33,24 @@ MIT License
 			!(heightThreshold && widthThreshold) &&
 			((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
 		) {
-			if (!devtools.isOpen || devtools.orientation !== orientation) {
+			if (!devtools.isOpen || devtools.orientation !== orientation && emitEvents) {
 				emitEvent(true, orientation);
 			}
 
 			devtools.isOpen = true;
 			devtools.orientation = orientation;
 		} else {
-			if (devtools.isOpen) {
+			if (devtools.isOpen && emitEvents) {
 				emitEvent(false, undefined);
 			}
 
 			devtools.isOpen = false;
 			devtools.orientation = undefined;
 		}
-	}, 500);
+	}
+	
+	main({emitEvents: false})
+	setInterval(main, 500);
 
 	if (typeof module !== 'undefined' && module.exports) {
 		module.exports = devtools;
