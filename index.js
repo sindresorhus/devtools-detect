@@ -26,14 +26,12 @@ MIT License
 
 	//Function to check if the given device is a phone or ipad
 	function isPhone(){
-		if((navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.toLowerCase().indexOf('iphone') > -1) || (navigator.userAgent.toLowerCase().indexOf('ipad') > -1)){
+		if ((navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.toLowerCase().indexOf('iphone') > -1) || (navigator.userAgent.toLowerCase().indexOf('ipad') > -1)){
 			return true;
-		}
-		else{
+		}else {
 			return false;
 		}
 	}
-
 	//Check how long its takes for the given code to execute 
 	//It return a value after execution
 	//If value is greater than 60 then dev tool is open
@@ -41,7 +39,7 @@ MIT License
 	//Since the time to execute cosole.log takes longer when dev tool is open
 	function checkPerformance(){
 		var start = performance.now();
-		for(let i =0;i<100;i++){
+		for (let i =0;i<100;i++){
 			console.log();
 			console.clear();
 		}
@@ -70,26 +68,23 @@ MIT License
 		
 		}
 		//checking if the responsive device is phone
-		else if(isPhone()){
-            if(parseInt(checkPerformance())>60){
-                if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
-                emitEvent(true, '');
-            }
-            devtools.isOpen = true;
-            devtools.orientation = '';
+		else if (isPhone()){
+            		if (parseInt(checkPerformance())>60){
+                		if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
+                			emitEvent(true, '');
+            			}
+            			devtools.isOpen = true;
+            			devtools.orientation = '';
                 
-            }else{
-                if (devtools.isOpen && emitEvents) {
-                emitEvent(false, undefined);
-            }
-            devtools.isOpen = false;
-            devtools.orientation = undefined;
-            }
+            	}else {
+                	if (devtools.isOpen && emitEvents) {
+                		emitEvent(false, undefined);
+            		}
+            		devtools.isOpen = false;
+            		devtools.orientation = undefined;
+            		}
 
-        }
-
-
-		else {
+        	}else {
 			if (devtools.isOpen && emitEvents) {
 				emitEvent(false, undefined);
 			}
