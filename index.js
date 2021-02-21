@@ -46,7 +46,7 @@ MIT License
 			console.log();
 			console.clear();
 		}
-		Let end = performance.now();
+		let end = performance.now();
 		return (end - start);
 	}
 
