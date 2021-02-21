@@ -24,7 +24,7 @@ MIT License
 		}));
 	};
 
-	//function to check if the given device is a phone or ipad
+	// Function to check if the given device is a phone or ipad
 	function isPhone() {
 		if (
 			(navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.toLowerCase().indexOf('iphone') > -1) ||
@@ -35,18 +35,18 @@ MIT License
 		}
 	}
 
-	//check how long its takes for the given code to execute 
-	//It return a value after execution
-	//if value is greater than 60 then dev tool is open
-	//if value is less than 60 then dev tool is not open
-	//since the time to execute cosole.log takes longer when dev tool is open
+	// Check how long its takes for the given code to execute 
+	// It return a value after execution
+	// If value is greater than 60 then dev tool is open
+	// If value is less than 60 then dev tool is not open
+	// Since the time to execute cosole.log takes longer when dev tool is open
 	function checkPerformance() {
-		var start = performance.now();
+		let start = performance.now();
 		for (let i = 0; i < 100; i++) {
 			console.log();
 			console.clear();
 		}
-		var end = performance.now();
+		Let end = performance.now();
 		return (end - start);
 	}
 
@@ -71,7 +71,7 @@ MIT License
 			devtools.orientation = orientation;
 
 		}
-		//checking if the responsive device is phone
+		// Checking if the responsive device is phone
 		else if (isPhone()) {
 			if (parseInt(checkPerformance()) > 60) {
 				if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
