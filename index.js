@@ -24,7 +24,7 @@ MIT License
 		}));
 	};
 
-	// Function to check if the given device is a phone or ipad
+    	// Function to check if the given device is a phone or ipad
 	function isPhone() {
 		if (
 			(navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.toLowerCase().indexOf('iphone') > -1) ||
@@ -50,26 +50,23 @@ MIT License
 		return (end - start);
 	}
 
-
-	const main = ({
-		emitEvents = true
-	} = {}) => {
-		
+	const main = ({emitEvents = true} = {}) => {
 		const widthThreshold = window.outerWidth - window.innerWidth > threshold;
 		const heightThreshold = window.outerHeight - window.innerHeight > threshold;
 		const orientation = widthThreshold ? 'vertical' : 'horizontal';
 
-
-		if (!(heightThreshold && widthThreshold) &&
-			((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
+		if (
+			!(heightThreshold && widthThreshold) &&
+			((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+		) {
 			if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 				emitEvent(true, orientation);
 			}
+
 			devtools.isOpen = true;
 			devtools.orientation = orientation;
-
 		}
-		// Checking if the responsive device is phone
+        	// Checking if the responsive device is phone
 		else if (isPhone()) {
 			if (parseInt(checkPerformance()) > 60) {
 				if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
@@ -93,15 +90,10 @@ MIT License
 
 			devtools.isOpen = false;
 			devtools.orientation = undefined;
-
-
 		}
+	};
 
-};
-
-main({
-	emitEvents: false
-	});
+	main({emitEvents: false});
 	setInterval(main, 500);
 
 	if (typeof module !== 'undefined' && module.exports) {
