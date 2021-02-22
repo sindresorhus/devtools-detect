@@ -30,9 +30,8 @@ MIT License
 			(navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.toLowerCase().indexOf('iphone') > -1) ||
 			(navigator.userAgent.toLowerCase().indexOf('ipad') > -1)) {
 			return true;
-		} else {
-			return false;
-		}
+		} 
+		return false;
 	}
 
 	// Check how long its takes for the given code to execute 
@@ -41,12 +40,13 @@ MIT License
 	// If value is less than 60 then dev tool is not open
 	// Since the time to execute cosole.log takes longer when dev tool is open
 	function checkPerformance() {
-		let start = performance.now();
+		const start = performance.now();
 		for (let i = 0; i < 100; i++) {
 			console.log();
 			console.clear();
 		}
-		let end = performance.now();
+		const end = performance.now();
+		
 		return (end - start);
 	}
 
@@ -54,8 +54,7 @@ MIT License
 	const main = ({
 		emitEvents = true
 	} = {}) => {
-
-
+		
 		const widthThreshold = window.outerWidth - window.innerWidth > threshold;
 		const heightThreshold = window.outerHeight - window.innerHeight > threshold;
 		const orientation = widthThreshold ? 'vertical' : 'horizontal';
@@ -66,7 +65,6 @@ MIT License
 			if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 				emitEvent(true, orientation);
 			}
-
 			devtools.isOpen = true;
 			devtools.orientation = orientation;
 
@@ -99,10 +97,10 @@ MIT License
 
 		}
 
-	};
+};
 
-	main({
-		emitEvents: false
+main({
+	emitEvents: false
 	});
 	setInterval(main, 500);
 
