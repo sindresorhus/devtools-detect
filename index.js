@@ -30,11 +30,12 @@ MIT License
 			(navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.toLowerCase().indexOf('iphone') > -1) ||
 			(navigator.userAgent.toLowerCase().indexOf('ipad') > -1)) {
 			return true;
-		} 
+		}
+		
 		return false;
 	}
 
-	// Check how long its takes for the given code to execute 
+	// Check how long its takes for the given code to execute
 	// It return a value after execution
 	// If value is greater than 60 then dev tool is open
 	// If value is less than 60 then dev tool is not open
@@ -44,9 +45,9 @@ MIT License
 		for (let i = 0; i < 100; i++) {
 			console.log();
 			console.clear();
+			
 		}
 		const end = performance.now();
-		
 		return (end - start);
 	}
 
@@ -71,6 +72,7 @@ MIT License
 			if (parseInt(checkPerformance()) > 60) {
 				if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 					emitEvent(true, '');
+					
 				}
 				devtools.isOpen = true;
 				devtools.orientation = '';
