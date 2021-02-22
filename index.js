@@ -24,7 +24,7 @@ MIT License
 		}));
 	};
 
-    	// Function to check if the given device is a phone or ipad
+	// Function to check if the given device is a phone or ipad
 	function isPhone() {
 		if (
 			(navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.toLowerCase().indexOf('iphone') > -1) ||
@@ -66,7 +66,7 @@ MIT License
 			devtools.isOpen = true;
 			devtools.orientation = orientation;
 		}
-        	// Checking if the responsive device is phone
+		// Checking if the responsive device is phone
 		else if (isPhone()) {
 			if (parseInt(checkPerformance()) > 60) {
 				if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
