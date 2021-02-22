@@ -31,7 +31,7 @@ MIT License
 			(navigator.userAgent.toLowerCase().indexOf('ipad') > -1)) {
 			return true;
 		}
-		
+
 		return false;
 	}
 
@@ -45,8 +45,8 @@ MIT License
 		for (let i = 0; i < 100; i++) {
 			console.log();
 			console.clear();
-			
 		}
+
 		const end = performance.now();
 		return (end - start);
 	}
@@ -56,35 +56,29 @@ MIT License
 		const heightThreshold = window.outerHeight - window.innerHeight > threshold;
 		const orientation = widthThreshold ? 'vertical' : 'horizontal';
 
-		if (
-			!(heightThreshold && widthThreshold) &&
-			((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
-		) {
+		if (!(heightThreshold && widthThreshold) && ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
 			if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 				emitEvent(true, orientation);
 			}
 
 			devtools.isOpen = true;
 			devtools.orientation = orientation;
-		}
-		// Checking if the responsive device is phone
-		else if (isPhone()) {
-			if (parseInt(checkPerformance()) > 60) {
+		} else if (isPhone()) {
+			if (parseInt(checkPerformance(), 0) > 60) {
 				if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
 					emitEvent(true, '');
-					
 				}
+
 				devtools.isOpen = true;
 				devtools.orientation = '';
-
 			} else {
 				if (devtools.isOpen && emitEvents) {
 					emitEvent(false, undefined);
 				}
+
 				devtools.isOpen = false;
 				devtools.orientation = undefined;
 			}
-
 		} else {
 			if (devtools.isOpen && emitEvents) {
 				emitEvent(false, undefined);
