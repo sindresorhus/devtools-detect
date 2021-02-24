@@ -26,13 +26,7 @@ MIT License
 
 	// Function to check if the given device is a phone or ipad
 	function isPhone() {
-		if (
-			(navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.toLowerCase().indexOf('iphone') > -1) ||
-			(navigator.userAgent.toLowerCase().indexOf('ipad') > -1)) {
-			return true;
-		}
-
-		return false;
+		return /android|ipad/i.test(navigator.userAgent);
 	}
 
 	// Check how long its takes for the given code to execute
