@@ -4,27 +4,25 @@
 
 Useful for when you want something special to happen when DevTools is open. Like pausing canvas, adding style debug info, etc.
 
-
 ## [Demo](https://sindresorhus.com/devtools-detect)
-
 
 ## Install
 
+```sh
+npm install devtools-detect
 ```
-$ npm install devtools-detect
-```
-
 
 ## Usage
 
 ```html
-<script src="node_modules/devtools-detect/index.js"></script>
 <script type="module">
+	import devtools from './node_modules/devtools-detect/index.js';
+
 	// Check if it's open
-	console.log('Is DevTools open:', window.devtools.isOpen);
+	console.log('Is DevTools open:', devtools.isOpen);
 
 	// Check it's orientation, `undefined` if not open
-	console.log('DevTools orientation:', window.devtools.orientation);
+	console.log('DevTools orientation:', devtools.orientation);
 
 	// Get notified when it's opened/closed or orientation changes
 	window.addEventListener('devtoolschange', event => {
@@ -34,7 +32,6 @@ $ npm install devtools-detect
 </script>
 ```
 
-
 ## Support
 
 - Chrome DevTools
@@ -42,12 +39,6 @@ $ npm install devtools-detect
 - Firefox DevTools
 - Opera DevTools
 
-
 ## Caveats
 
 Doesn't work if DevTools is undocked and will show false positive if you toggle any kind of sidebar.
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

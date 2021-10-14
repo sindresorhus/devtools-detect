@@ -1,11 +1,11 @@
 import {expectType} from 'tsd';
-import devtools = require('.');
+import devtools, {Orientation, DevToolsEvent} from './index.js';
 
 expectType<boolean>(devtools.isOpen);
-expectType<devtools.Orientation | undefined>(devtools.orientation);
+expectType<Orientation | undefined>(devtools.orientation);
 
 window.addEventListener('devtoolschange', devtoolsEvent => {
-	expectType<devtools.DevToolsEvent>(devtoolsEvent);
+	expectType<DevToolsEvent>(devtoolsEvent);
 	expectType<boolean>(devtoolsEvent.detail.isOpen);
-	expectType<devtools.Orientation | undefined>(devtoolsEvent.detail.orientation);
+	expectType<Orientation | undefined>(devtoolsEvent.detail.orientation);
 });

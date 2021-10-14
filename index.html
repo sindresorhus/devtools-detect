@@ -73,13 +73,14 @@
 				</div>
 			</footer>
 		</div>
-		<script src="index.js"></script>
 		<script type="module">
+			import devtools from './index.js';
+
 			const stateElement = document.querySelector('#devtools-state');
 			const orientationElement = document.querySelector('#devtools-orientation');
 
-			stateElement.textContent = window.devtools.isOpen ? 'yes' : 'no';
-			orientationElement.textContent = window.devtools.orientation ? window.devtools.orientation : '';
+			stateElement.textContent = devtools.isOpen ? 'yes' : 'no';
+			orientationElement.textContent = devtools.orientation ? devtools.orientation : '';
 
 			window.addEventListener('devtoolschange', event => {
 				stateElement.textContent = event.detail.isOpen ? 'yes' : 'no';
