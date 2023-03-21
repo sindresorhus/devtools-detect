@@ -4,6 +4,8 @@
 
 Useful for when you want something special to happen when DevTools is open. Like pausing canvas, adding style debug info, etc.
 
+**This package has a lot of flaws. It used to work better, but browsers changed, and the detection now has too many false-positives.**
+
 ## [Demo](https://sindresorhus.com/devtools-detect)
 
 ## Install
