@@ -22,6 +22,7 @@ const emitEvent = (isOpen, orientation) => {
 };
 
 const main = ({emitEvents = true} = {}) => {
+	window.devtools = devtools;
 	const widthThreshold = globalThis.outerWidth - globalThis.innerWidth > threshold;
 	const heightThreshold = globalThis.outerHeight - globalThis.innerHeight > threshold;
 	const orientation = widthThreshold ? 'vertical' : 'horizontal';
