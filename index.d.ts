@@ -6,10 +6,10 @@ declare global {
 			options?: boolean | AddEventListenerOptions
 		): void;
 		removeEventListener(
-            type: 'devtoolschange',
-            listener: (event: DevToolsEvent) => unknown,
-            options?: boolean | EventListenerOptions
-        ): void;
+			type: 'devtoolschange',
+			listener: (event: DevToolsEvent) => unknown,
+			options?: boolean | EventListenerOptions
+		): void;
 	}
 }
 
