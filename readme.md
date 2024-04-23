@@ -34,6 +34,28 @@ npm install devtools-detect
 </script>
 ```
 
+## React Usage
+```jsx
+import { useState } from 'react';
+import devtoolsDetect from 'devtools-detect';
+
+export default function App() {
+  const [isDevToolsOpen, setIsDevToolsOpen] = useState(devtoolsDetect.isOpen);
+
+  if (window) {
+    window.addEventListener('devtoolschange', function (e) {
+      if (e.detail.isOpen) {
+        setIsDevToolsOpen(true);
+      } else {
+        setIsDevToolsOpen(false);
+      }
+    });
+  }
+
+  return isDevToolsOpen ? 'OPEN' : 'CLOSE';
+}
+```
+
 ## Support
 
 - Chrome DevTools
