@@ -36,23 +36,33 @@ npm install devtools-detect
 
 ## React Usage
 ```jsx
-import { useState } from 'react';
+import {useState, useEffect} from 'react';
 import devtoolsDetect from 'devtools-detect';
 
+export function useDevToolsStatus() {
+	const [isDevToolsOpen, setIsDevToolsOpen] = useState(devtoolsDetect.isOpen);
+
+	useEffect(() => {
+		const handleChange = event => {
+			setIsDevToolsOpen(event.detail.isOpen);
+		};
+
+		window.addEventListener('devtoolschange', handleChange);
+
+		return () => {
+			window.removeEventListener('devtoolschange', handleChange);
+		};
+	}, []);
+
+	return isDevToolsOpen;
+}
+```
+```jsx
+import {useDevToolsStatus} from './useDevToolsStatus.js';
+
 export default function App() {
-  const [isDevToolsOpen, setIsDevToolsOpen] = useState(devtoolsDetect.isOpen);
-
-  if (window) {
-    window.addEventListener('devtoolschange', function (e) {
-      if (e.detail.isOpen) {
-        setIsDevToolsOpen(true);
-      } else {
-        setIsDevToolsOpen(false);
-      }
-    });
-  }
-
-  return isDevToolsOpen ? 'OPEN' : 'CLOSE';
+  const isDevToolsOpen = useDevToolsStatus();
+  return isDevToolsOpen ? 'OPEN' : 'CLOSED';
 }
 ```
 
